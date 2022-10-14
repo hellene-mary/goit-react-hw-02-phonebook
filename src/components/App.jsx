@@ -18,9 +18,11 @@ class App extends Component {
     formSubmitHemdler = data => {
         const newContact = { id: nanoid(), name: data.name, number: data.number };
 
-        this.setState(prevState => {
-            return { contacts: [...prevState.contacts, newContact] };
-        });
+        this.state.contacts.find(contact => contact.name === data.name)
+            ? window.alert(`${data.name} is alredy in contacts.`)
+            : this.setState(prevState => {
+                  return { contacts: [...prevState.contacts, newContact] };
+              });
     };
 
     handlerChangeFilter = evt => {
