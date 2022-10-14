@@ -22,3 +22,8 @@ h6,
 p {
     margin: 0;
 }
+
+ol,
+ul {
+    margin: 0;
+}
