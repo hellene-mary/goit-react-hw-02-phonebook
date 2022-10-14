@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 
 export function ContactList({ contacts, onClick }) {
@@ -14,3 +15,14 @@ export function ContactList({ contacts, onClick }) {
         </ul>
     );
 }
+
+ContactList.propTypes = {
+    contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            number: PropTypes.string,
+        })
+    ).isRequired,
+    onClick: PropTypes.func.isRequired,
+};

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
-class ContactList extends Component {
+class ContactForm extends Component {
     state = {
         name: '',
         number: '',
     };
 
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired,
+    };
+
     handlerChange = evt => {
-        // console.log('~ evt', evt.currentTarget.name);
         // this.setState({ name: evt.currentTarget.value });
         const { name, value } = evt.currentTarget;
 
@@ -54,4 +58,4 @@ class ContactList extends Component {
     }
 }
 
-export default ContactList;
+export default ContactForm;

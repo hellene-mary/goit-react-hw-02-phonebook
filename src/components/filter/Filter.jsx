@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Filter.module.css';
 
 export function Filter({ onChange }) {
@@ -8,3 +9,7 @@ export function Filter({ onChange }) {
         </label>
     );
 }
+
+Filter.propTypes = {
+    onChange: PropTypes.func.isRequired,
+};
