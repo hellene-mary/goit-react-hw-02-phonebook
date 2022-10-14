@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import { Contacts } from './contacts/Contacts';
-import Form from './form/Form';
-import { Section } from './section/Section';
+import { ContactList } from './contacts/ContactList';
+import ContactForm from './form/ContactForm';
 import { Filter } from './filter/Filter';
 
 class App extends Component {
@@ -40,13 +39,14 @@ class App extends Component {
         const filterContacts = this.filterContacts();
 
         return (
-            <>
-                <Section title={'Phonebook'}>
-                    <Form onSubmit={this.formSubmitHemdler} />
-                    <Filter onChange={this.handlerChangeFilter} />
-                    <Contacts contacts={filterContacts} />
-                </Section>
-            </>
+            <div>
+                <h1>Phonebook</h1>
+
+                <ContactForm onSubmit={this.formSubmitHemdler} />
+                <h2>Contacts</h2>
+                <Filter onChange={this.handlerChangeFilter} />
+                <ContactList contacts={filterContacts} />
+            </div>
         );
     }
 }
