@@ -10,7 +10,7 @@ class App extends Component {
     };
 
     formSubmitHemdler = data => {
-        const newContact = { id: nanoid(), name: data.name };
+        const newContact = { id: nanoid(), name: data.name, number: data.number };
 
         this.setState(prevState => {
             return { contacts: [...prevState.contacts, newContact] };

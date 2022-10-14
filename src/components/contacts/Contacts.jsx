@@ -7,7 +7,7 @@ export function Contacts({ contacts }) {
             <ul>
                 {contacts.map(contact => (
                     <li key={contact.id} className={css.contact}>
-                        {contact.name}
+                        {contact.name}: {contact.number}
                     </li>
                 ))}
             </ul>
